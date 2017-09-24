@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <script src="jquery/jq.js"></script>
     <script src="jquery/bootstrap.min.js"></script>
+    <script src="javascript/employee.js"></script>
     <link rel="stylesheet" href="Bootstrap/bs.css">
     <link rel="stylesheet" href="css/manage.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
@@ -36,61 +37,56 @@
     </div>
 </nav>
 <div id="ww">
-    <div id="table1">
-        <table class="table table-hover" id="ss">
+    <!--<div id="table1">-->
+        <table class="table table-hover" id="ss" onclick="find(this)">
             <thead>
             <tr>
-                <th style='text-align: center;width: 15%;'>姓名</th>
-                <th style='text-align: center;width: 17%;'>性别</th>
-                <th style="text-align: center;width: 17%;">职位</th>
-                <th style='text-align: center;width: 20%;'>电话</th>
-                <th style='text-align: center;width: 20%;'><br/></th>
+                <th style='text-align: center;width: 12%;'>姓名</th>
+                <th style='text-align: center;width: 12%;'>性别</th>
+                <th style="text-align: center;width: 12%;">年龄</th>
+                <th style="text-align: center;width: 15%;">职位</th>
+                <th style='text-align: center;width: 17%;'>电话</th>
+                <th style="text-align: center;width: 21%;">邮箱</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>张一</td>
                 <td>女</td>
+                <td>20</td>
                 <td>系统管理员</td>
                 <td>12344336234</td>
-                <td>
-                    <button type="button" class="btn btn-default btn-sm">编辑</button>
-                    <button type="button" class="btn btn-danger btn-sm">删除</button>
-                </td>
+                <td>123456@qq.com</td>
             </tr>
             <tr>
-                <td>张一</td>
+                <td>张二</td>
                 <td>女</td>
+                <td>21</td>
                 <td>经理</td>
                 <td>12344336234</td>
-                <td>
-                    <button type="button" class="btn btn-default btn-sm">编辑</button>
-                    <button type="button" class="btn btn-danger btn-sm">删除</button>
-                </td>
+                <td>123455@qq.com</td>
             </tr>
             <tr>
-                <td>张一</td>
+                <td>张三</td>
                 <td>女</td>
+                <td>22</td>
                 <td>售票员</td>
                 <td>12344336234</td>
-                <td>
-                    <button type="button" class="btn btn-default btn-sm">编辑</button>
-                    <button type="button" class="btn btn-danger btn-sm">删除</button>
-                </td>
+                <td>122456@qq.com</td>
             </tr>
             <tr>
-                <td>张一</td>
+                <td>张四</td>
                 <td>女</td>
+                <td>23</td>
                 <td>售票员</td>
                 <td>12344336234</td>
-                <td>
-                    <button type="button" class="btn btn-default btn-sm">编辑</button>
-                    <button type="button" class="btn btn-danger btn-sm">删除</button>
-                </td>
+                <td>223456@qq.com</td>
             </tr>
             </tbody>
         </table>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: right;">添加员工</button>
+        <button class="btn btn-danger" onclick="del(this)" style="float: right;margin: 5px;">删除</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: right;margin: 5px;">添加</button>
+        <button class="btn btn-default" data-toggle="modal" data-target="#myModal1" onclick="model(this)" style="float: right;margin: 5px;">编辑</button>
     </div>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
@@ -105,15 +101,37 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">名字:</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="firstname"
-                                       placeholder="张一">
+                                <input type="text" class="form-control" id="name"
+                                       placeholder="张一" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">性别:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="s"
+                                       placeholder="女">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">年龄:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="age"
+                                       placeholder="0">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">电话:</label>
+
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="lastname"
+                                <input type="text" class="form-control" id="tel"
                                        placeholder="电话号码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">邮箱:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="emil"
+                                       placeholder="XXX@qq.com">
                             </div>
                         </div>
                         <div class="form-group">
@@ -123,23 +141,67 @@
                                        placeholder="系统管理员">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="lastname" class="col-sm-3 control-label">性别:</label>
-                            <div class="col-sm-8">
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosinline" id="optionsRadios3"
-                                           value="option1" checked>男
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosinline" id="optionsRadios4"
-                                           value="option2">女
-                                </label>
-                            </div>
-                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">添加</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="add(this)">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" style="width:30%;padding:10px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">名字:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="nam">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">性别:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="sex">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">年龄:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="ag">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">电话:</label>
+
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="tele">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">邮箱:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">职位:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="work">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="save(this)">保存</button>
                 </div>
             </div>
         </div>
@@ -166,6 +228,5 @@
         </nav>
     </div>
 </div>
-
 </body>
 </html>

@@ -9,11 +9,16 @@ body {
 }
 
 #ww {
+
     margin: 50px 20px;
     padding: 10px;
 }
 
 #ss {
+    text-align: center;
+}
+
+#stdio{
     text-align: center;
 }
 
@@ -26,3 +31,4 @@ div.modal {
     margin-left: auto;
     margin-right: auto;
 }
+
