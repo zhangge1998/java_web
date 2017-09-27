@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,196 +38,212 @@
     </div>
 </nav>
 <div id="ww">
-    <!--<div id="table1">-->
-        <table class="table table-hover" id="ss" onclick="find(this)">
-            <thead>
-            <tr>
-                <th style='text-align: center;width: 12%;'>姓名</th>
-                <th style='text-align: center;width: 12%;'>性别</th>
-                <th style="text-align: center;width: 12%;">年龄</th>
-                <th style="text-align: center;width: 15%;">职位</th>
-                <th style='text-align: center;width: 17%;'>电话</th>
-                <th style="text-align: center;width: 21%;">邮箱</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>张一</td>
-                <td>女</td>
-                <td>20</td>
-                <td>系统管理员</td>
-                <td>12344336234</td>
-                <td>123456@qq.com</td>
-            </tr>
-            <tr>
-                <td>张二</td>
-                <td>女</td>
-                <td>21</td>
-                <td>经理</td>
-                <td>12344336234</td>
-                <td>123455@qq.com</td>
-            </tr>
-            <tr>
-                <td>张三</td>
-                <td>女</td>
-                <td>22</td>
-                <td>售票员</td>
-                <td>12344336234</td>
-                <td>122456@qq.com</td>
-            </tr>
-            <tr>
-                <td>张四</td>
-                <td>女</td>
-                <td>23</td>
-                <td>售票员</td>
-                <td>12344336234</td>
-                <td>223456@qq.com</td>
-            </tr>
-            </tbody>
-        </table>
-        <button class="btn btn-danger" onclick="del(this)" style="float: right;margin: 5px;">删除</button>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: right;margin: 5px;">添加</button>
-        <button class="btn btn-default" data-toggle="modal" data-target="#myModal1" onclick="model(this)" style="float: right;margin: 5px;">编辑</button>
-    </div>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" style="width:30%;padding:10px;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4>添加员工</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">名字:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="name"
-                                       placeholder="张一" >
-                            </div>
+    <table class="table table-hover" id="ss" onclick="find(this)">
+        <thead>
+        <tr>
+            <th style='text-align: center;width: 12%;'>编号</th>
+            <th style='text-align: center;width: 12%;'>姓名</th>
+            <th style='text-align: center;width: 12%;'>性别</th>
+            <th style="text-align: center;width: 12%;">年龄</th>
+            <th style="text-align: center;width: 15%;">职位</th>
+            <th style='text-align: center;width: 17%;'>电话</th>
+            <th style="text-align: center;width: 21%;">邮箱</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>000001</td>
+            <td>张一</td>
+            <td>女</td>
+            <td>20</td>
+            <td>系统管理员</td>
+            <td>12344336234</td>
+            <td>123456@qq.com</td>
+        </tr>
+        <tr>
+            <td>000002</td>
+            <td>张二</td>
+            <td>女</td>
+            <td>21</td>
+            <td>经理</td>
+            <td>12344336234</td>
+            <td>123455@qq.com</td>
+        </tr>
+        <tr>
+            <td>000003</td>
+            <td>张三</td>
+            <td>女</td>
+            <td>22</td>
+            <td>售票员</td>
+            <td>12344336234</td>
+            <td>122456@qq.com</td>
+        </tr>
+        <tr>
+            <td>000004</td>
+            <td>张四</td>
+            <td>女</td>
+            <td>23</td>
+            <td>售票员</td>
+            <td>12344336234</td>
+            <td>223456@qq.com</td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-danger" onclick="del(this)" style="float: right;margin: 5px;">删除</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: right;margin: 5px;">添加</button>
+    <button class="btn btn-default" data-toggle="modal" data-target="#myModal1" onclick="model(this)" style="float: right;margin: 5px;">编辑</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" style="width:30%;padding:10px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4>添加员工</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">名字:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="number"
+                                   value="0000001" >
                         </div>
-                        <div class="form-group">
-                            <label  class="col-sm-3 control-label">性别:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="s"
-                                       placeholder="女">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">名字:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="name"
+                                   value="张一" >
                         </div>
-                        <div class="form-group">
-                            <label  class="col-sm-3 control-label">年龄:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="age"
-                                       placeholder="0">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">性别:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="s"
+                                   value="女">
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">电话:</label>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">年龄:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="age"
+                                   value="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">电话:</label>
 
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="tel"
-                                       placeholder="电话号码">
-                            </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="tel"
+                                   value="电话号码">
                         </div>
-                        <div class="form-group">
-                            <label  class="col-sm-3 control-label">邮箱:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="emil"
-                                       placeholder="XXX@qq.com">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">邮箱:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="emil"
+                                   value="XXX@qq.com">
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">职位:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="job"
-                                       placeholder="系统管理员">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">职位:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="job"
+                                   value="系统管理员">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="add(this)">添加</button>
-                </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="add(this)">添加</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" style="width:30%;padding:10px;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4>编辑</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">名字:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="nam">
-                            </div>
+</div>
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" style="width:30%;padding:10px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4>编辑</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">编号:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="num">
                         </div>
-                        <div class="form-group">
-                            <label  class="col-sm-3 control-label">性别:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="sex">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">名字:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="nam">
                         </div>
-                        <div class="form-group">
-                            <label  class="col-sm-3 control-label">年龄:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="ag">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">性别:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="sex">
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">电话:</label>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">年龄:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="ag">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">电话:</label>
 
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="tele">
-                            </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="tele">
                         </div>
-                        <div class="form-group">
-                            <label  class="col-sm-3 control-label">邮箱:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="email">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">邮箱:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="email">
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">职位:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="work">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">职位:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="work">
                         </div>
+                    </div>
 
 
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="save(this)">保存</button>
-                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="save(this)">保存</button>
             </div>
         </div>
     </div>
-    <div id="center">
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+</div>
+<div id="center">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 </div>
 </body>
 </html>

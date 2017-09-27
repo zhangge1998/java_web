@@ -9,14 +9,37 @@ let array = {};
 function find() {
     let table = document.getElementById('stdio');
     let length = table.rows[0].cells.length;
+    let l=table.rows.length;
+    for(let i = 0;i<l;i++){
+        if(i == 0){
+            let row = table.rows[i];
+            row.setAttribute('class','active');
+        }
+        else if(i%2 != 0 && i != 0){
+            let row = table.rows[i];
+             row.setAttribute('class','default');
+        }
+        else if(i%2==0 && i!=0){
+            let row = table.rows[i];
+            row.setAttribute('class','default');
+        }
+    }
     if (event.srcElement.tagName == 'TD') {
         let curRow = event.srcElement.parentElement;
-        curRow.setAttribute('class','choose');
-        let num = curRow.rowIndex;
+        let num = curRow.rowIndex ;
+        if(curRow.rowIndex == 0){
+            curRow.setAttribute('class','warning');
+            return 0;
+        }
+        else{
+            curRow.setAttribute('class','info');
+
+        }
         let arr = [];
         for (let i = 0; i < length; i++) {
             arr[i] = table.rows[num].cells[i].innerHTML;
         }
+
         array.num = num;
         array.table = table;
         array.n = length;

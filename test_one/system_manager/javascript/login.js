@@ -16,19 +16,3 @@ function confirm() {
         return true;
     }
 }
-
-// <div id = 'newElem'></div>
-
-// img
-// let image = document.createElement('img')
-// image.src = '';
-//image.a.... = ('','')
-
-//document.getElementById('neElem').parentElement(image)
-
-//for(i;i-5;i++){
-// for(j;j-5;j++){
-
-//    }
-// <br/>
-// }
