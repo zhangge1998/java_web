@@ -5,7 +5,7 @@ function confirm() {
     var name = document.getElementById('name');
     var pass = document.getElementById('pass');
     if (name.value === '' || pass.value === '') {
-        document.getElementById("alert").innerHTML = ('用户名、密码不能为空');
+        // document.getElementById("alert").innerHTML = ('用户名、密码不能为空');
         return false;
     }
     if (name.value != 'hah' || pass.value != '123123') {
