@@ -2,167 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="jquery/jq.js"></script>
-    <script src="jquery/bootstrap.min.js"></script>
-    <script src="javascript/employee.js"></script>
     <link rel="stylesheet" href="Bootstrap/bs.css">
     <link rel="stylesheet" href="css/manage.css">
+    <link rel="stylesheet" href="css/userInfomation.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <title>employee</title>
-    <style>
-        img{
-            width:100%;
-            height:100%;
-            border-radius: 100%;
-        }
-        table{
-            /*margin-left: 300px;*/
-            background-color: transparent;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        .box{
-            margin-left: 400px;
-        }
-        .btn-hollow{
-            font-size: 14px;
-            border:1px solid rgba(59,194,29,.7);
-            color:#42c02e!important;
-            padding: 4px 12px;
-            font-weight: 400;
-            line-height: normal;
-            border-radius: 40px;
-            background: none;
-        }
-        .hide{
-            position: absolute;
-            display: block!important;
-            width: 82px;
-            opacity: 0;
-        }
-        .top-line{
-            padding-top: 0;
-
-        }
-        tr:last-child {
-            border: none;}
-        .base tr:first-child {
-            border: none;
-        }
-        tr{
-            border-bottom: 1px solid #b8b8b8;
-        }
-        td{
-            padding: 20px 0;
-        }
-        .title{
-            font-size:15px;
-        }
-        input{
-            padding: 5px 10px;
-            font-size: 15px;
-            border: 1px solid #c8c8c8;
-            border-radius: 4px;
-            background-color: hsla(0,0%,71%,.1);
-        }
-        span {
-            margin: 0 20px 0 6px;
-            font-size: 15px;
-            vertical-align: middle;
-        }
-        .setting-save {
-            width: 100px;
-            margin: 30px 0 60px;
-            border-radius: 20px;
-            border: none;
-        }
-    </style>
 </head>
 <body>
-
-<div style="position: relative;float: right;display: inline-block;height:40px;line-height: 40px;">
-    <a href="./login.html" style="float: right;text-decoration:none;color: black;">&nbsp;退出</a>
+<div id="header">
+    <a href="./login.html" id="link">&nbsp;退出</a>
     <span>系统管理员</span>
 </div>
-<div style="background-color: #3c763d;border-color: #3c763d; border-radius: 100%;width:40px;height:40px;position: relative;float: right;margin-right: 5px;">
-    <img src="image/sky.jpg">
+<div class="image">
+    <img src="image/sky.jpg" id="image">
 </div>
-<p style="font-size: 40px;text-align: center;margin: 20px;font-family: 'AR PL UKai TW MBE'">FZN影院管理系统</p>
-
-<nav class="navbar navbar-inverse" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="./employee.html">员工管理</a></li>
+<p class="title1">FZN影院管理系统</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked nav-inverse" id="left">
+                <li role="presentation" class="active"><a href="./employee.html">员工管理</a></li>
+                <li role="presentation"><a href="./stdio.html">演出厅管理</a></li>
+                <li role="presentation"><a href="./seat.html">座位管理</a></li>
+                <li role="presentation"><a href="./user.html">登录用户管理</a></li>
+                <li role="presentation"><a href="./userInformation.html">个人信息</a></li>
             </ul>
         </div>
-        <div>
-            <ul class="nav navbar-nav">
-                <li><a href="./stdio.html">演出厅管理</a></li>
-                <li><a href="./seat.html">座位管理</a></li>
-                <li><a href="./user.html">登录用户管理</a></li>
-                <li><a href="./userInformation.html">个人信息</a></li>
-            </ul>
+        <div class="col-md-offset-4">
+            <div class="box">
+                <table>
+                    <thead>
+                    <tr>
+                        <th style="width:125px;height:0px;"></th>
+                        <th style="width:360px;height:0px;"></th>
+                    </tr>
+                    </thead>
+                    <tbody class="base">
+                    <tr>
+                        <td class="top-line">
+                            <div style="border-radius: 100%;width:100px;height:100px;margin-right: 5px;">
+                                <img src="image/sky.jpg">
+                            </div>
+                        </td>
+                        <td class="top-line">
+                            <a class="btn btn-hollow">
+                                <input  type="file" class="hide">更改头像
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">姓名
+                        </td>
+                        <td><input type="text" placeholder="请输入姓名" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td class="title">年龄
+                        </td>
+                        <td><input type="text" placeholder="请输入年龄" id="age"></td>
+                    </tr>
+                    <tr>
+                        <td class="title">性别
+                        </td>
+                        <td>
+                            <input type="radio" value="1" name="gender" id="men" checked><span>男</span>
+                            <input type="radio" value="2" name="gender" id="women"><span>女</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">电话
+                        </td>
+                        <td><input type="text" placeholder="请输入电话" id="tel"></td>
+                    </tr>
+                    <tr>
+                        <td class="title">邮箱
+                        </td>
+                        <td><input type="text" placeholder="请输入邮箱" id="emil"></td>
+                    </tr>
+                    <tr>
+                        <td class="title">住址
+                        </td>
+                        <td><input type="text" placeholder="请输入住址" id="address"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <input type="submit" class="btn btn-success setting-save" value="保存" id="btn">
+            </div>
         </div>
     </div>
-</nav>
-<div class="box">
-    <table>
-        <thead>
-        <tr>
-            <th style="width:125px;height:0px;"></th>
-            <th style="width:360px;height:0px;"></th>
-        </tr>
-        </thead>
-        <tbody class="base">
-        <tr>
-            <td class="top-line">
-                <div style="border-radius: 100%;width:100px;height:100px;margin-right: 5px;">
-                    <img src="image/sky.jpg">
-                </div>
-            </td>
-            <td class="top-line">
-                <a class="btn btn-hollow">
-                    <input  type="file" class="hide">更改头像
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class="title">姓名
-            </td>
-            <td><input type="text" placeholder="请输入姓名" id="name"></td>
-        </tr>
-        <tr>
-            <td class="title">年龄
-            </td>
-            <td><input type="text" placeholder="请输入年龄" id="age"></td>
-        </tr>
-        <tr>
-            <td class="title">性别
-            </td>
-            <td>
-                <input type="radio" value="1" name="gender" id="men" checked><span>男</span>
-                <input type="radio" value="2" name="gender" id="women"><span>女</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="title">电话
-            </td>
-            <td><input type="text" placeholder="请输入电话" id="tel"></td>
-        </tr>
-        <tr>
-            <td class="title">邮箱
-            </td>
-            <td><input type="text" placeholder="请输入邮箱" id="emil"></td>
-        </tr>
-        <tr>
-            <td class="title">住址
-            </td>
-            <td><input type="text" placeholder="请输入住址" id="address"></td>
-        </tr>
-        </tbody>
-    </table>
-    <input type="submit" class="btn btn-success setting-save" value="保存" id="btn">
 </div>
+<script src="jquery/jq.js"></script>
+<script src="jquery/bootstrap.min.js"></script>
+<script src="javascript/employee.js"></script>
+<script src="javascript/match.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 body {
 	font-family: 'Lato', sans-serif;
 }
+
 .front-indicator {
 	width: 100px;
 	margin: 0px 20px 15px 120px;
@@ -14,11 +15,6 @@ body {
 	width: 100%;
 	text-align: center;
 }
-.container {
-	margin: 0 auto;
-	width: 700px;
-	text-align: left;
-}
 .booking-details {
 	float: left;
 	text-align: left;
@@ -27,7 +23,7 @@ body {
 	position: relative;
 	height: 401px;
 }
-/**/
+
 div.seatCharts-cell {
 	color: #182C4E;
 	height: 35px;
