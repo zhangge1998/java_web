@@ -2,8 +2,6 @@
  * Created by ubuntu on 21/09/17.
  */
 'use strict';
-
-'use strict';
 let array = {};
 function find() {
     let table = document.getElementById('ss');
@@ -71,19 +69,6 @@ function checkName(name){
     }
 }
 
-function checkSex(s){
-    let check=/^[男|女]$/;
-    let sex=document.getElementById('s').value;
-    if(check.test(sex)){
-        document.getElementById('3').innerText='';
-        return true;
-    }
-    else{
-        document.getElementById('3').innerText='请输入男或女！';
-        document.getElementById('s').value='';
-        return false;
-    }
-}
 
 function checkAge(age){
     let check=/^[2-5][0-9]$/;
@@ -127,23 +112,9 @@ function checkEmil(emil){
     }
 }
 
-function checkJob(job){
-    let check=/^[\u4e00-\u9fa5]{2,5}$/;
-    let jjob=document.getElementById('job').value;
-    if(check.test(jjob)){
-        document.getElementById('7').innerText='';
-        return true;
-    }
-    else{
-        document.getElementById('7').innerText='职位为2～5个汉字！';
-        document.getElementById('job').value='';
-        return false;
-    }
-}
-
 function checkAll(){
     let add=document.getElementById('add');
-    if(checkNum()&&checkName()&&checkSex()&&checkAge()&&checkEmil()&&checkTel()&&checkJob()){
+    if(checkNum()&&checkName()&&checkAge()&&checkEmil()&&checkTel()){
         add.setAttribute('data-dismiss','modal');
         return true;
     }
@@ -154,12 +125,21 @@ function checkAll(){
 }
 
 function model() {
-
     document.getElementById('num').value = array.info[0];
     document.getElementById('nam').value = array.info[1];
-    document.getElementById('sex').value = array.info[2];
+    var obj = document.getElementsByName('sex1');
+    for(var i = 0; i < obj.length; i++){
+        if(obj[i].value == array.info[2]){
+            obj[i].checked = true;
+        }
+    }
     document.getElementById('ag').value = array.info[3];
-    document.getElementById('work').value = array.info[4];
+    var sel = document.getElementById('work');
+    for(var j = 0; j < sel.options.length; j++){
+        if(sel.options[j].innerText == array.info[4]){
+            sel.selectedIndex = j;
+        }
+    }
     document.getElementById('tele').value = array.info[5];
     document.getElementById('email').value = array.info[6];
 
@@ -171,7 +151,12 @@ function save(obj) {
     let info = [];
     info[0]=document.getElementById('num').value;
     info[1]=document.getElementById('nam').value;
-    info[2]=document.getElementById('sex').value;
+    var sex = document.getElementsByName('sex1');
+    for(var i = 0; i < sex.length; i++){
+        if(sex[i].checked){
+            info[2] = sex[i].value;
+        }
+    }
     info[3]=document.getElementById('ag').value;
     info[4]=document.getElementById('work').value;
     info[5]=document.getElementById('tele').value;
@@ -193,7 +178,12 @@ function add() {
         let addInfo = [];
         addInfo[0] = document.getElementById('number').value;
         addInfo[1] = document.getElementById('name').value;
-        addInfo[2] = document.getElementById('s').value;
+        var obj = document.getElementsByName('sex');
+        for(var i = 0; i < obj.length; i++){
+            if(obj[i].checked){
+                addInfo[2] = obj[i].value;
+            }
+        }
         addInfo[3] = document.getElementById('age').value;
         addInfo[4] = document.getElementById('job').value;
         addInfo[5] = document.getElementById('tel').value;
@@ -217,9 +207,7 @@ function add() {
 
         document.getElementById('number').value = '';
         document.getElementById('name').value = '';
-        document.getElementById('s').value = '';
         document.getElementById('age').value = '';
-        document.getElementById('job').value = '';
         document.getElementById('tel').value = '';
         document.getElementById('emil').value = '';
     }

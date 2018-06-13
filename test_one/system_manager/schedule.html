@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Bootstrap/bs.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/manage.css">
-    <title>user</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>schedule</title>
     <style>
         input[type='radio'] {
             margin: 0 3px 0 16px;
@@ -13,7 +13,7 @@
             vertical-align: middle;
         }
         select {
-            width: 150px;
+            width: 60px;
             height: 30px;
         }
     </style>
@@ -21,7 +21,7 @@
 <body>
 <div id="header">
     <a href="./login.html" id="link">&nbsp;退出</a>
-    <span>系统管理员</span>
+    <span>经理</span>
 </div>
 <div class="image">
     <img src="image/sky.jpg" id="image">
@@ -35,49 +35,47 @@
     <div class="row">
         <div class="col-md-2">
             <ul class="nav nav-pills nav-stacked nav-inverse" id="left">
-                <li role="presentation" class="active"><a href="./employee.html">员工管理</a></li>
-                <li role="presentation"><a href="./stdio.html">演出厅管理</a></li>
-                <!--<li role="presentation"><a href="./seat.html">座位管理</a></li>-->
-                <li role="presentation"><a href="./user.html">登录用户管理</a></li>
+                <li role="presentation"><a href="./play.html">剧目管理</a></li>
+                <li role="presentation"><a href="./schedule.html">演出计划管理</a></li>
+                <li role="presentation"><a href="./sale.html">销售额管理</a></li>
                 <li role="presentation"><a href="./userInformation.html">个人信息</a></li>
             </ul>
         </div>
         <div class="col-md-offset-2">
             <div id="ww">
-                <table class="table table-hover" id="ss" onclick="find(this)">
+                <table class="table table-hover" id="schedule" onclick="find(this)">
                     <thead>
                     <tr>
-                        <th style='text-align: center;width: 12%;'>编号</th>
-                        <th style='text-align: center;width: 12%;'>密码</th>
-                        <th style="text-align: center;width: 15%;">职位</th>
-                        <th style="text-align: center;width: 12%;">头像</th>
-
+                        <th style='text-align: center;width:15%;'>剧目</th>
+                        <th style='text-align: center;width:17%;'>演出厅</th>
+                        <th style='text-align: center;width:15%;'>演出时间</th>
+                        <th style='text-align: center;width:15%;'>票价</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>000001</td>
-                        <td>123456</td>
-                        <td>管理员</td>
-                        <td></td>
+                        <td>复仇者联盟</td>
+                        <td>1号演出厅</td>
+                        <td>2017-08-11T08:00</td>
+                        <td>35.00</td>
                     </tr>
                     <tr>
-                        <td>000002</td>
-                        <td>123456</td>
-                        <td>经理</td>
-                        <td></td>
+                        <td>复仇者联盟</td>
+                        <td>1号演出厅</td>
+                        <td>2017-08-11T08:00</td>
+                        <td>35.00</td>
                     </tr>
                     <tr>
-                        <td>000003</td>
-                        <td>123456</td>
-                        <td>经理</td>
-                        <td></td>
+                        <td>复仇者联盟</td>
+                        <td>1号演出厅</td>
+                        <td>2017-08-11T08:00</td>
+                        <td>35.00</td>
                     </tr>
                     <tr>
-                        <td>000004</td>
-                        <td>123456</td>
-                        <td>经理</td>
-                        <td></td>
+                        <td>复仇者联盟</td>
+                        <td>1号演出厅</td>
+                        <td>2017-08-11T08:00</td>
+                        <td>35.00</td>
                     </tr>
                     </tbody>
                 </table>
@@ -95,50 +93,50 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4>添加员工</h4>
+                                <h4>添加演出计划</h4>
                             </div>
                             <div class="modal-body">
                                 <form class="form-horizontal" role="form">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">编号:</label>
+                                        <label class="col-sm-3 control-label">剧目:</label>
                                         <div class="col-sm-8">
-                                            <label><input type="text" class="form-control" id="number"
-                                                          required="required" onblur="checkNum('number')"></label>
-                                            <span id="1" style="color:red;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">密码:</label>
-                                        <div class="col-sm-8">
-                                            <label><input type="text" class="form-control" id="pass"
-                                                          required="required" onblur="checkName('pass')"></label>
-                                            <span id="2" style="color:red;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">职位:</label>
-                                        <div class="col-sm-8">
-                                            <select name="job" id="job" class="form-control">
-                                                <option value="管理员">管理员</option>
-                                                <option value="经理">经理</option>
-                                                <option value="售票员">售票员</option>
+                                            <select name="name" id="name" class="form-control">
+
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">头像:</label>
+                                        <label class="col-sm-3 control-label">演出厅:</label>
                                         <div class="col-sm-8">
-                                            <img src="" alt="" id="img">
+                                            <select name="stdio" id="stdio"  class="form-control">
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <span id="8" style="color:red;"></span>
+                                        <label class="col-sm-3 control-label">演出时间:</label>
+                                        <div class="col-sm-8">
+                                            <label>
+                                                <input type="datetime-local" name="time" value="2018-04-28 10:41" id="time"/>
+                                            </label>
+                                        </div>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">票价:</label>
+                                        <div class="col-sm-8">
+                                            <select name="price" id="price" class="form-control">
+                                                <option value="35.00">35.00</option>
+                                                <option value="28.00">28.00</option>
+                                                <option value="32.00">32.00</option>
+                                                <option value="24.00">24.00</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" id="add" class="btn btn-primary" onclick="add(this)">添加</button>
+                                <button type="button" class="btn btn-primary" id="add"
+                                        onclick="add(this)">添加
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -154,34 +152,40 @@
                             <div class="modal-body">
                                 <form class="form-horizontal" role="form">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">编号:</label>
+                                        <label class="col-sm-3 control-label">剧目:</label>
                                         <div class="col-sm-8">
-                                            <label><input type="text" class="form-control" id="num"></label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">密码:</label>
-                                        <div class="col-sm-8">
-                                            <label><input type="text" class="form-control" id="pas"></label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">职位:</label>
-                                        <div class="col-sm-8">
-                                            <select name="job" id="work" class="form-control">
-                                                <option value="管理员">管理员</option>
-                                                <option value="经理">经理</option>
-                                                <option value="售票员">售票员</option>
+                                            <select name="nam" id="nam" class="form-control">
+
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">头像:</label>
+                                        <label class="col-sm-3 control-label">演出厅:</label>
                                         <div class="col-sm-8">
-                                            <img src="" alt="" id="img1">
+                                            <select name="stdio1" id="stdio1" class="form-control">
+
+                                            </select>
                                         </div>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">演出时间:</label>
+                                        <div class="col-sm-8">
+                                            <label>
+                                                <input type="datetime-local" name="time1"  id="time1"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">票价:</label>
+                                        <div class="col-sm-8">
+                                            <select name="price1" id="price1" class="form-control">
+                                                <option value="35.00">35.00</option>
+                                                <option value="28.00">28.00</option>
+                                                <option value="32.00">32.00</option>
+                                                <option value="24.00">24.00</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -198,7 +202,7 @@
 </div>
 <script src="jquery/jq.js"></script>
 <script src="jquery/bootstrap.min.js"></script>
-<script src="javascript/user.js"></script>
+<script src="javascript/schedule.js"></script>
 <script src="javascript/match.js"></script>
 </body>
 </html>

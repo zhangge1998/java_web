@@ -4,15 +4,14 @@
 function confirm() {
     var name = document.getElementById('name');
     var pass = document.getElementById('pass');
-    if (name.value === '' || pass.value === '') {
-        // document.getElementById("alert").innerHTML = ('用户名、密码不能为空');
-        return false;
+    var type = document.getElementById('type');
+    if(type.value == 1){
+        console.log('管理员');
     }
-    if (name.value != 'hah' || pass.value != '123123') {
-        document.getElementById("alert").innerHTML = ('用户名或密码错误');
-        return false;
+    else if(type.value == 2){
+        console.log('经理');
     }
-    else {
-        return true;
+    else{
+        console.log('售票员');
     }
 }

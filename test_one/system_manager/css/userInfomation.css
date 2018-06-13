@@ -52,8 +52,8 @@ input{
     border-radius: 4px;
     background-color: hsla(0,0%,71%,.1);
 }
-span {
-    margin: 0 20px 0 6px;
+input[type='radio'] {
+    margin: 0 3px 0 16px;
     font-size: 15px;
     vertical-align: middle;
 }

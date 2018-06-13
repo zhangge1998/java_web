@@ -4,95 +4,81 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Bootstrap/bs.css">
     <link rel="stylesheet" href="css/manage.css">
-    <link rel="stylesheet" href="css/hide.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>stdio</title>
-    <style>
-        input[type='radio'] {
-            margin: 0 3px 0 16px;
-            font-size: 15px;
-            vertical-align: middle;
-        }
-        select {
-            width: 60px;
-            height: 30px;
-        }
-    </style>
+    <title>play</title>
 </head>
 <body>
 <div id="header">
     <a href="./login.html" id="link">&nbsp;退出</a>
-    <span>系统管理员</span>
+    <span>经理</span>
 </div>
 <div class="image">
     <img src="image/sky.jpg" id="image">
 </div>
 <p class="title">JerryMouse影院管理系统</p>
 <div id="center">
-    <input type="text" class="search" placeholder="search">
+    <input type="search" class="search" placeholder="search">
     <button class="fa fa-search"></button>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
             <ul class="nav nav-pills nav-stacked nav-inverse" id="left">
-                <li role="presentation"><a href="./employee.html">员工管理</a></li>
-                <li role="presentation"><a href="./stdio.html">演出厅管理</a></li>
-                <!--<li role="presentation"><a href="./seat.html">座位管理</a></li>-->
-                <li role="presentation"><a href="./user.html">登录用户管理</a></li>
+                <li role="presentation"><a href="./play.html">剧目管理</a></li>
+                <li role="presentation"><a href="./schedule.html">演出计划管理</a></li>
+                <li role="presentation"><a href="./table.html">销售额管理</a></li>
                 <li role="presentation"><a href="./userInformation.html">个人信息</a></li>
             </ul>
         </div>
         <div class="col-md-offset-2">
             <div id="ww">
-                <table class="table table-hover" id="stdio" onclick="find(this)">
+                <table class="table table-hover" id="play" onclick="find(this)">
                     <thead>
                     <tr>
-                        <th style='text-align: center;width:13%;'>id</th>
                         <th style='text-align: center;width:13%;'>名称</th>
-                        <th style='text-align: center;width:15%;'>类型</th>
-                        <th style='text-align: center;width:13%;'>行</th>
-                        <th style='text-align: center;width:13%;'>列</th>
-                        <th style="text-align: center;width:17%;">状态</th>
+                        <th style='text-align: center;width:13%;'>类型</th>
+                        <th style='text-align: center;width:13%;'>语言</th>
+                        <th style='text-align: center;width:13%;'>时长</th>
+                        <th style='text-align: center;width:30%;'>简介</th>
+                        <th style="text-align: center;width:13%;">状态</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>1号演出厅</td>
-                        <td>豪华</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>空闲</td>
+                        <td>复仇者联盟3</td>
+                        <td>科幻</td>
+                        <td>英语</td>
+                        <td>90分钟</td>
+                        <td>1940年5月25日至6月4日之间，在德国机械化部队的快速攻势下崩溃的英法联军，在位于法国东北部、靠近比利时边境的港口小城敦刻尔克，依靠英国海军和民众自发组织的“无敌舰队”，进行了史上最大规模的军事疏散行动，成功挽救了超过33万8000名来自英国、法国、比利时军人的生命。</td>
+                        <td>已上映</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>2号演出厅</td>
-                        <td>大</td>
-                        <td>12</td>
-                        <td>12</td>
-                        <td>空闲</td>
+                        <td>复仇者联盟3</td>
+                        <td>科幻</td>
+                        <td>英语</td>
+                        <td>90分钟</td>
+                        <td>1940年5月25日至6月4日之间，在德国机械化部队的快速攻势下崩溃的英法联军，在位于法国东北部、靠近比利时边境的港口小城敦刻尔克，依靠英国海军和民众自发组织的“无敌舰队”，进行了史上最大规模的军事疏散行动，成功挽救了超过33万8000名来自英国、法国、比利时军人的生命。</td>
+                        <td>已上映</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>3号演出厅</td>
-                        <td>中</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>空闲</td>
+                        <td>复仇者联盟3</td>
+                        <td>科幻</td>
+                        <td>英语</td>
+                        <td>90分钟</td>
+                        <td>1940年5月25日至6月4日之间，在德国机械化部队的快速攻势下崩溃的英法联军，在位于法国东北部、靠近比利时边境的港口小城敦刻尔克，依靠英国海军和民众自发组织的“无敌舰队”，进行了史上最大规模的军事疏散行动，成功挽救了超过33万8000名来自英国、法国、比利时军人的生命。</td>
+                        <td>已上映</td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>4号演出厅</td>
-                        <td>小</td>
-                        <td>8</td>
-                        <td>8</td>
-                        <td>空闲</td>
+                        <td>复仇者联盟3</td>
+                        <td>科幻</td>
+                        <td>英语</td>
+                        <td>90分钟</td>
+                        <td>1940年5月25日至6月4日之间，在德国机械化部队的快速攻势下崩溃的英法联军，在位于法国东北部、靠近比利时边境的港口小城敦刻尔克，依靠英国海军和民众自发组织的“无敌舰队”，进行了史上最大规模的军事疏散行动，成功挽救了超过33万8000名来自英国、法国、比利时军人的生命。</td>
+                        <td>已上映</td>
                     </tr>
                     </tbody>
                 </table>
                 <div id="btns">
-                    <button class="btn btn-default" style="float: right;margin: 5px;">座位管理</button>
                     <button class="btn btn-danger" onclick="del(this)" style="float: right;margin: 5px;">删除</button>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: right;margin: 5px;">添加
                     </button>
@@ -106,7 +92,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4>添加演出厅</h4>
+                                <h4>添加影片</h4>
                             </div>
                             <div class="modal-body">
                                 <form class="form-horizontal" role="form">
@@ -122,33 +108,44 @@
                                         <label class="col-sm-3 control-label">类型:</label>
                                         <div class="col-sm-8">
                                             <select name="type" id="type" class="form-control">
-                                                <option value="大">大</option>
-                                                <option value="中">中</option>
-                                                <option value="小">小</option>
-                                                <option value="豪华">豪华</option>
+                                                <option value="科幻">科幻</option>
+                                                <option value="恐怖">恐怖</option>
+                                                <option value="悬疑">悬疑</option>
+                                                <option value="爱情">爱情</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">行数:</label>
+                                        <label class="col-sm-3 control-label">类型:</label>
                                         <div class="col-sm-8">
-                                            <select name="row" id="row" class="form-control">
+                                            <select name="language" id="language" class="form-control">
+                                                <option value="国语">国语</option>
+                                                <option value="英语">英语</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">列数:</label>
+                                        <label class="col-sm-3 control-label">时长:</label>
                                         <div class="col-sm-8">
-                                            <select name="col" id="col" class="form-control">
+                                            <select name="long" id="long" class="form-control">
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">简介:</label>
+                                        <div class="col-sm-8">
+                                            <label><textarea  rows="4" class="form-control" id="intro"></textarea>
+                                            </label>
+                                            <span id="4" style="color:red;"></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">状态:</label>
                                         <div class="col-sm-8">
                                             <label>
-                                                <input type="radio" name="status" value="空闲"  checked="checked"/><span>空闲</span>
-                                                <input type="radio" name="status" value="使用中"/><span>使用中</span>
+                                                <input type="radio" name="status" value="未上映" checked="checked"/><span>未上映</span>
+                                                <input type="radio" name="status" value="已上映"/><span>已上映</span>
+                                                <input type="radio" name="status" value="已下映"/><span>已下映</span>
                                             </label>
                                         </div>
                                     </div>
@@ -175,47 +172,58 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">名称:</label>
                                         <div class="col-sm-8">
-                                            <label><input type="text" class="form-control" id="nam"></label>
+                                            <label><input type="text" class="form-control" id="nam"
+                                                          ></label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">类型:</label>
                                         <div class="col-sm-8">
-                                            <select name="type" id="typ" class="form-control">
-                                                <option value="大">大</option>
-                                                <option value="中">中</option>
-                                                <option value="小">小</option>
-                                                <option value="豪华">豪华</option>
+                                            <select name="typ" id="typ" class="form-control">
+                                                <option value="科幻">科幻</option>
+                                                <option value="恐怖">恐怖</option>
+                                                <option value="悬疑">悬疑</option>
+                                                <option value="爱情">爱情</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">行数:</label>
+                                        <label class="col-sm-3 control-label">类型:</label>
                                         <div class="col-sm-8">
-                                            <select name="row" id="rows" class="form-control">
+                                            <select name="lang" id="lang" class="form-control">
+                                                <option value="国语">国语</option>
+                                                <option value="英语">英语</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">列数:</label>
+                                        <label class="col-sm-3 control-label">时长:</label>
                                         <div class="col-sm-8">
-                                            <select name="cols" id="cols" class="form-control">
+                                            <select name="long1" id="long1" class="form-control">
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">简介:</label>
+                                        <div class="col-sm-8">
+                                            <label><textarea rows="5" class="form-control" id="intro1"></textarea>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">状态:</label>
                                         <div class="col-sm-8">
                                             <label>
-                                                <input type="radio" name="status1" value="空闲"/><span>空闲</span>
-                                                <input type="radio" name="status1" value="使用中"/><span>使用中</span>
+                                                <input type="radio" name="status1" value="未上映"/><span>未上映</span>
+                                                <input type="radio" name="status1" value="已上映"/><span>已上映</span>
+                                                <input type="radio" name="status1" value="已下映"/><span>已下映</span>
                                             </label>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true"
+                                <button type="button" class="btn btn-primary" id="save"
                                         onclick="save(this)">保存
                                 </button>
                             </div>
@@ -227,30 +235,20 @@
     </div>
 </div>
 <script>
-    window.onload = function(){
-        (function(){
-            let row = document.getElementById('row');
-            for(let i = 1; i <= 12; i++){
-                row.innerHTML += '<option>' + i + '</option>';
-            }
-            let col = document.getElementById('col');
-            for(let i = 1; i <= 12; i++){
-                col.innerHTML += '<option>' + i + '</option>';
-            }
-            let rows = document.getElementById('rows');
-            for(let i = 1; i <= 12; i++){
-                rows.innerHTML += '<option>' + i + '</option>';
-            }
-            let cols = document.getElementById('cols');
-            for(let i = 1; i <= 12; i++){
-                cols.innerHTML += '<option>' + i + '</option>';
-            }
-        })();
-    }
+    (function(){
+        let long = document.getElementById('long');
+        for(let i = 70; i < 120; i++){
+            long.innerHTML += '<option>' + i + '分钟' + '</option>'
+        }
+        let long1 = document.getElementById('long1');
+        for(let j = 70; j < 120; j++){
+            long1.innerHTML += '<option>' + j + '分钟' + '</option>'
+        }
+    })()
 </script>
 <script src="jquery/jq.js"></script>
 <script src="jquery/bootstrap.min.js"></script>
-<script src="javascript/stdio.js"></script>
+<script src="javascript/play.js"></script>
 <script src="javascript/match.js"></script>
 </body>
 </html>

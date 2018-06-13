@@ -39,77 +39,23 @@ function find() {
 
 }
 
-function checkName(name) {
-    let check = /^[\u4e00-\u9fa5]{5,9}$/;
-    let nam = document.getElementById('name').value;
-    if (check.test(nam)) {
-        document.getElementById('1').innerText = '';
-        return true;
-    }
-    else {
-        document.getElementById('1').innerText = '请输入5～9个汉字！';
-        document.getElementById('name').value = '';
-        return false;
-    }
-}
-
-function checkType(type) {
-    let check = /^[\u4e00-\u9fa5]{1,2}$/;
-    let nam = document.getElementById('type').value;
-    if (check.test(nam)) {
-        document.getElementById('2').innerText = '';
-        return true;
-    }
-    else {
-        document.getElementById('2').innerText = '请输入演出厅类型！';
-        document.getElementById('type').value = '';
-        return false;
-    }
-}
-
-function checkRow(row) {
-    let r = document.getElementById('row').value;
-    if (r>0&&r<=20) {
-        document.getElementById('3').innerText = '';
-        return true;
-    }
-    else {
-        document.getElementById('3').innerText = '行数不为0且不超过20！';
-        document.getElementById('row').value = '';
-        return false;
-    }
-}
-
-function checkCol(col) {
-    let c = document.getElementById('col').value;
-    if (c>0&&c<=20) {
-        document.getElementById('4').innerText = '';
-        return true;
-    }
-    else {
-        document.getElementById('4').innerText = '列数不为0且不超过20！';
-        document.getElementById('col').value = '';
-        return false;
-    }
-}
-
-function checkStatus(status) {
-    let check = /^[\u4e00-\u9fa5]{2,3}$/;
-    let s = document.getElementById('status').value;
-    if (check.test(s)) {
-        document.getElementById('5').innerText = '';
-        return true;
-    }
-    else {
-        document.getElementById('5').innerText = '可用或不可用！';
-        document.getElementById('status').value = '';
-        return false;
-    }
-}
+// function checkName(name) {
+//     let check = /^[\u4e00-\u9fa5]{5,9}$/;
+//     let nam = document.getElementById('name').value;
+//     if (check.test(nam)) {
+//         document.getElementById('1').innerText = '';
+//         return true;
+//     }
+//     else {
+//         document.getElementById('1').innerText = '请输入5～9个汉字！';
+//         document.getElementById('name').value = '';
+//         return false;
+//     }
+// }
 
 function checkAll() {
     let add = document.getElementById('add');
-    if (checkName() && checkType() && checkRow() && checkCol() && checkStatus()) {
+    if (1) {
         add.setAttribute('data-dismiss', 'modal');
         return true;
     }
@@ -120,15 +66,32 @@ function checkAll() {
 
 
 function model() {
-    // let a = find();
-    // console.log(array);
 
     document.getElementById('nam').value = array.info[0];
-    document.getElementById('typ').value = array.info[1];
-    document.getElementById('rows').value = array.info[2];
-    document.getElementById('cols').value = array.info[3];
-    document.getElementById('statu').value = array.info[4];
-
+    var type = document.getElementById('typ');
+    for(var i = 0; i < type.options.length; i++){
+        if(type.options[i].innerText == array.info[1]){
+            type.selectedIndex = i;
+        }
+    }
+    var rows = document.getElementById('rows');
+    for(var j = 0; j < rows.options.length; j++){
+        if(rows.options[j].innerText == array.info[2]){
+            rows.selectedIndex = j;
+        }
+    }
+    var cols = document.getElementById('cols');
+    for(var k = 0; k < rows.options.length; k++){
+        if(cols.options[k].innerText == array.info[3]){
+            cols.selectedIndex = k;
+        }
+    }
+    var obj = document.getElementsByName('status1');
+    for(var m = 0; m < obj.length; m++){
+        if(obj[m].value == array.info[4]){
+            obj[m].checked = true;
+        }
+    }
 
 }
 
@@ -139,7 +102,12 @@ function save(obj) {
     info[1] = document.getElementById('typ').value;
     info[2] = document.getElementById('rows').value;
     info[3] = document.getElementById('cols').value;
-    info[4] = document.getElementById('statu').value;
+    var status = document.getElementsByName('status1');
+    for(var i = 0; i < status.length; i++){
+        if(status[i].checked){
+            info[4] = status[i].value;
+        }
+    }
     for (let i = 0; i < array.n; i++) {
         array.table.rows[array.num].cells[i].innerHTML = info[i];
     }
@@ -158,7 +126,13 @@ function add() {
         addInfo[1] = document.getElementById('type').value;
         addInfo[2] = document.getElementById('row').value;
         addInfo[3] = document.getElementById('col').value;
-        addInfo[4] = document.getElementById('status').value;
+        // addInfo[4] = document.getElementById('status').value;
+        var obj = document.getElementsByName('status');
+        for(var i = 0; i < obj.length; i++){
+            if(obj[i].checked){
+                addInfo[4] = obj[i].value;
+            }
+        }
         let newRow = employeAdd.insertRow();
         let employeeName = newRow.insertCell();
         let employeeType = newRow.insertCell();
@@ -173,10 +147,19 @@ function add() {
         employeeStatus.innerText = addInfo[4];
 
         document.getElementById('name').value = '';
-        document.getElementById('type').value = '';
-        document.getElementById('row').value = '';
-        document.getElementById('col').value = '';
-        document.getElementById('status').value = '';
     }
 }
+
+function manage() {
+    var seat_manage = document.querySelectorAll('button')[1];
+    console.log(seat_manage);
+    seat_manage.onclick = function() {
+        var id  = array.info[0];
+        if(id){
+            window.location.href = 'http://localhost:63342/system_manager/seat.html'
+        }
+    }
+
+}
+manage();
 

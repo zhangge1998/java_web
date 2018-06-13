@@ -16,13 +16,17 @@ body {
     background-position: center center;
     /*background-size: cover;*/
 }
-p{
-    color: white;
-}
+
 #alert{
     color:red;
     text-align: center;
 }
+.row span{
+    color: white;
+    font-size: 16px;
+    position: relative;
+    top: 4px;
+}
 #but{
-    margin-top: 40px;
+    margin-top: 30px;
 }
