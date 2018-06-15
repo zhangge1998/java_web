@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Bootstrap/bs.css">
+    <!--<link rel="stylesheet" href="css/jquery.seat-charts.css">-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/manage.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>account</title>
+    <style>
+        .row{
+            margin-top: 5px;
+        }
+        span{
+            position: relative;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <a href="./login.html" id="link">&nbsp;退出</a>
+    <span>系统管理员</span>
+</div>
+<div class="image">
+    <img src="image/sky.jpg" id="image">
+</div>
+<p class="title">JerryMouse售票管理系统</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-4">
+            <div class="col-md-7">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span>座位:</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <p>1_1座</p>
+                                <p>1_2座</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span>剧目:</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" value="钢铁侠" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span>演出厅:</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="sName" value="1号厅" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span>演出时间:</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="time" value="2017-08-11T08:00" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span>票价:</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="price" value="24" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span>应收款:</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="need" value="48" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span>收款:</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="money">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="but">
+                        <button type="submit" class="btn btn-primary" >确认</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="jquery/jq.js"></script>
+<script src="jquery/bootstrap.min.js"></script>
+<!--<script src="javascript/match.js"></script>-->
+</body>
+</html>
